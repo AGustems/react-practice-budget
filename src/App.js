@@ -1,6 +1,16 @@
+import React from "react"
+import Question from "./components/Question"
+
 function App() {
   return (
-    <h1>Presupuesto</h1>
+    <div className="container">
+      <header>
+        <h1>Weekly Expenses</h1>
+        <div className="content-principal content">
+          <Question/>
+        </div>
+      </header>
+    </div>
   );
 }
 
