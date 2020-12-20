@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import Error from './Error'
 
-const Question = () => {
+const Question = ({setBudget, setRemaining}) => {
     // Define the quantity budget and error states
     const [quantity, setQuantity] = useState(0)
     const [error, setError] = useState(false)
     
     // Function to read the budget
-    const setBudget = ({target}) => {
+    const handleBudget = ({target}) => {
         setQuantity(parseInt(target.value, 10))
     }
 
@@ -22,7 +22,8 @@ const Question = () => {
         }
         // If the number is correct
         setError(false)
-
+        setBudget(quantity)
+        setRemaining(quantity)
     }
 
     return (
@@ -34,7 +35,7 @@ const Question = () => {
                     type="number"
                     className="u-full-width"
                     placeholder="Insert your budget"
-                    onChange={setBudget}
+                    onChange={handleBudget}
                 />
                 <input
                     type="submit"
