@@ -117,7 +117,7 @@ h2 {
     margin: 0;
 }
 
-.expenses-made li p .gasto {
+.expenses-made li p .expense {
     background-color: #004085;
     padding: 1rem;
     color: white;

@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
+import PropTypes from 'prop-types'
 import Error from './Error'
 
-const Question = ({setBudget, setRemaining}) => {
+const Question = ({setBudget, setRemaining, setQuestion}) => {
     // Define the quantity budget and error states
     const [quantity, setQuantity] = useState(0)
     const [error, setError] = useState(false)
@@ -24,6 +25,7 @@ const Question = ({setBudget, setRemaining}) => {
         setError(false)
         setBudget(quantity)
         setRemaining(quantity)
+        setQuestion(false)
     }
 
     return (
@@ -45,6 +47,12 @@ const Question = ({setBudget, setRemaining}) => {
             </form>
         </>
     )
+}
+
+Question.propTypes = {
+    setBudget: PropTypes.func.isRequired,
+    setRemaining: PropTypes.func.isRequired,
+    setQuestion: PropTypes.func.isRequired
 }
 
 export default Question
